@@ -11,6 +11,3 @@ jobs:
 
       - name: Build with Make
         run: make
-
-      - name: Run the program (optional)
-        run: ./my_program
