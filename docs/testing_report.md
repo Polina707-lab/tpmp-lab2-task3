@@ -22,28 +22,28 @@
 # Скриншоты выполнения
 
 ## Тест 1
-![Test 1](images/test1.png)
+![Test 1](images/test1.jpg)
 
 ## Тест 2
-![Test 2](images/test2.png)
+![Test 2](images/test2.jpg)
 
 ## Тест 3
-![Test 3](images/test3.png)
+![Test 3](images/test3.jpg)
 
 ## Тест 4
-![Test 4](images/test4.png)
+![Test 4](images/test4.jpg)
 
 ## Тест 5
-![Test 5](images/test5.png)
+![Test 5](images/test5.jpg)
 
 ## Тест 6 — WORKER2
-![Test 6](images/test6_1.png)
-![Test 6](images/test6_2.png)
-![Test 6](images/test6_3.png)
+![Test 6](images/test6_1.jpg)
+![Test 6](images/test6_2.jpg)
+![Test 6](images/test6_3.jpg)
 
 ## Тест 7 — Международная компания
-![Test 7](images/test7_1.png)
-![Test 7](images/test7_2.png)
+![Test 7](images/test7_1.jpg)
+![Test 7](images/test7_2.jpg)
 
 ---
 
