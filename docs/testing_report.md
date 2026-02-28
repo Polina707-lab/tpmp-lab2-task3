@@ -36,16 +36,16 @@
 ### Тест 1 (основной набор данных)
 
 <img src="images/test1_1.png" width="800">
-<img src="images/test1_2.png" width="800">
-<img src="images/test1_3.png" width="800">
+<img src="images/test1_2.jpg" width="800">
+<img src="images/test1_3.jpg" width="800">
 
 ### Тест 2 (нет подходящих результатов)
 
-<img src="images/test2_1.png" width="800">
-<img src="images/test2_2.png" width="800">
+<img src="images/test2_1.jpg" width="800">
+<img src="images/test2_2.jpg" width="800">
 
 ### Тест 3 (граничное значение 365 дней)
-<img src="images/test3_1.png" width="800">
+<img src="images/test3_1.jpg" width="800">
 
 ---
 
