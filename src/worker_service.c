@@ -33,6 +33,7 @@ void worker_print_all(const WORKER2 *arr, size_t n, void (*printer)(const WORKER
         printer(&arr[i], (int)i);
     }
 }
+
 void worker_print_signed_less_than_year_ago(const WORKER2 *arr, size_t n, Date today,
                                             void (*printer)(const WORKER2*, int)) {
     printf("\n=== WORKERS WHO SIGNED CONTRACT < 1 YEAR AGO ===\n");
@@ -46,23 +47,22 @@ void worker_print_signed_less_than_year_ago(const WORKER2 *arr, size_t n, Date t
 
 void worker_print_double_contracts(const WORKER2 *arr, size_t n,
                                   void (*printer)(const WORKER2*, int)) {
-    
-    printf("\n=== WORKERS WITH DOUBLE CONTRACTS (same surname appears >= 2) ===\n");
+    printf("\n=== WORKERS WITH DOUBLE CONTRACTS (same code appears >= 2) ===\n");
     int printed_any = 0;
 
     for (size_t i = 0; i < n; i++) {
         int count = 0;
         for (size_t j = 0; j < n; j++) {
-            if (strcmp(arr[j].surname, arr[i].surname) == 0) {
+            if (arr[j].code == arr[i].code) {
                 count++;
             }
         }
 
         if (count >= 2) {
-            // print only first occurrence of this surname
+            /* print only first occurrence of this code */
             int first = 1;
             for (size_t k = 0; k < i; k++) {
-                if (strcmp(arr[k].surname, arr[i].surname) == 0) {
+                if (arr[k].code == arr[i].code) {
                     first = 0;
                     break;
                 }
@@ -73,10 +73,6 @@ void worker_print_double_contracts(const WORKER2 *arr, size_t n,
                 printed_any = 1;
             }
         }
-    }
-
-    if (!printed_any) {
-        printf("No workers with repeated surnames.\n");
     }
 }
 

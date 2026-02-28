@@ -12,7 +12,6 @@ void ui_print_main_menu(void) {
     printf("\n=== MAIN MENU ===\n");
     printf("1) Date tasks (prev/next day, days in month)\n");
     printf("2) WORKER2 tasks\n");
-    printf("3) International company tasks\n");
     printf("0) Exit\n");
 }
 
@@ -98,18 +97,4 @@ void ui_print_worker(const WORKER2 *w, int index) {
            w->sign_date.year, w->sign_date.month, w->sign_date.day,
            w->term_months,
            w->salary);
-}
-
-void ui_print_company(const InternationalCompany *c, int index) {
-    printf("[%d] %s | site: %s | employees: %d | branches(EU): %d | market years: %d\n",
-           index, c->name, c->website, c->employees, c->branches_europe, c->market_years);
-    printf("    HQ: %s, %s, %s, %s, %s, %s, house %s, apt %s\n",
-           c->hq_address.postal_index,
-           c->hq_address.country,
-           c->hq_address.region,
-           c->hq_address.district,
-           c->hq_address.city,
-           c->hq_address.street,
-           c->hq_address.house,
-           c->hq_address.apartment);
 }
