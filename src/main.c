@@ -4,30 +4,14 @@
 #include "models.h"
 #include "date_service.h"
 #include "worker_service.h"
-#include "company_service.h"
 
-static void run_date_tasks(void) {
-    Date d;
-    for (;;) {
-        d = ui_read_date("Enter a date:");
-        if (date_is_valid(d)) break;
-        printf("Invalid date. Try again.\n");
-    }
+int main(void) {
+    /* Demonstrate worker functions according to variant */
 
-    int dim = date_days_in_month(d.year, d.month);
-    printf("\nDays in this month: %d\n", dim);
-
-    Date prev = date_prev_day(d);
-    Date next = date_next_day(d);
-
-    ui_print_date("Previous day:", prev);
-    ui_print_date("Next day:    ", next);
-}
-
-static void run_worker_tasks(void) {
     WORKER2 workers[12];
     size_t n = worker_input_array(workers, 12);
 
+    printf("\nAll workers:\n");
     worker_print_all(workers, n, ui_print_worker);
 
     Date today;
@@ -37,9 +21,13 @@ static void run_worker_tasks(void) {
         printf("Invalid date. Try again.\n");
     }
 
+    /* workers who signed contract less than 1 year ago */
     worker_print_signed_less_than_year_ago(workers, n, today, ui_print_worker);
+
+    /* workers with double contracts (same code appears >= 2 times) */
     worker_print_double_contracts(workers, n, ui_print_worker);
 
+    /* average term for requested position */
     char pos[POSITION_MAX];
     ui_read_string("\nEnter position to compute average contract term: ", pos, sizeof(pos));
     double avg_months = 0.0;
@@ -49,31 +37,10 @@ static void run_worker_tasks(void) {
         printf("No workers with position '%s'\n", pos);
     }
 
+    /* count male/female */
     int male = 0, female = 0;
     worker_count_gender(workers, n, &male, &female);
     printf("Gender count: M=%d, F=%d\n", male, female);
-}
 
-static void run_company_tasks(void) {
-    InternationalCompany companies[20];
-    size_t n = company_input_array(companies, 20);
-    company_print_with_employees_gt(companies, n, 10000, ui_print_company);
-}
-
-int main(void) {
-    for (;;) {
-        ui_print_main_menu();
-        int choice = ui_read_int("Select: ", 0, 3);
-
-        if (choice == 0) {
-            printf("Bye!\n");
-            return 0;
-        } else if (choice == 1) {
-            run_date_tasks();
-        } else if (choice == 2) {
-            run_worker_tasks();
-        } else if (choice == 3) {
-            run_company_tasks();
-        }
-    }
+    return 0;
 }

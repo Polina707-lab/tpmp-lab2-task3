@@ -14,6 +14,5 @@ Date ui_read_date(const char *prompt);
 void ui_print_date(const char *label, Date d);
 
 void ui_print_worker(const WORKER2 *w, int index);
-void ui_print_company(const InternationalCompany *c, int index);
 
 #endif
